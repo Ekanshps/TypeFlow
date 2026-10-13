@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#3D52A0">
+  <title>TypeFlow — Free Online Typing Speed Test | WPM & Accuracy</title>
+  <meta name="description" content="Measure your typing speed and accuracy with TypeFlow, a free online typing test. Practice for 15, 30, or 60 seconds, choose a difficulty, and track your progress privately on your device.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="{{ canonical }}">
+  <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='img/favicon.svg') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="TypeFlow — Free Online Typing Speed Test">
+  <meta property="og:description" content="Find your typing rhythm. Test your WPM, accuracy, and progress in a calm, focused workspace.">
+  <meta property="og:url" content="{{ canonical }}">
+  <meta property="og:image" content="https://placehold.co/1200x630/3D52A0/FFFFFF.png?text=TypeFlow%20Typing%20Test">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="TypeFlow — Free Online Typing Speed Test">
+  <meta name="twitter:description" content="A free, focused typing speed test with live WPM and accuracy.">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "TypeFlow",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any device with a modern web browser",
+    "description": "A free online typing speed test to measure words per minute, accuracy, and typing progress.",
+    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+    "browserRequirements": "Requires JavaScript"
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to typing test</a>
+  <header class="site-header wrap">
+    <a class="brand" href="/" aria-label="TypeFlow home">
+      <!-- TODO: Replace this online placeholder logo URL with your final brand logo. -->
+      <img class="brand-logo" src="https://placehold.co/88x88/3D52A0/FFFFFF.png?text=TF" alt="TypeFlow logo" width="42" height="42">
+      <span class="brand-copy"><strong>TypeFlow</strong><small>THE TYPING WORKSPACE</small></span>
+    </a>
+    <nav aria-label="Main navigation"><a href="#test">Typing test</a><a href="#how-it-works">How it works</a></nav>
+    <span class="header-status"><i></i> Free forever</span>
+  </header>
+
+  <main id="main" class="wrap">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span> YOUR DAILY PRACTICE, REIMAGINED</p>
+        <h1 id="hero-title">Find your<br><span>typing rhythm.</span></h1>
+        <p class="hero-description">A calmer way to build speed. Practice with focused typing tests, see your accuracy in real time, and keep your progress right on your device.</p>
+        <a class="primary-link" href="#test">Start a free test <span aria-hidden="true">↘</span></a>
+        <div class="trust-row"><span><b>✓</b> No account needed</span><span><b>✓</b> Private by design</span></div>
+      </div>
+      <div class="hero-art" aria-label="Decorative geometric illustration">
+        <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+        <div class="art-card card-back"><span>TYPE</span><b>BETTER</b><small>ONE KEY AT A TIME</small></div>
+        <div class="art-card card-front"><div class="mini-top"><span>LIVE SESSION</span><span class="live-dot"></span></div><div class="art-number">WPM<span>+</span></div><div class="mini-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="art-foot"><span>FOCUS MODE</span><span>01 / 03</span></div></div>
+        <div class="float-chip chip-top"><span class="chip-icon">⌁</span><span><b>Find your flow</b><small>Practice with purpose</small></span></div>
+        <div class="float-chip chip-bottom"><span class="chip-check">✓</span><span><b>Progress, not pressure</b><small>Every session counts</small></span></div>
+      </div>
+    </section>
+
+    <section class="test-section" id="test" aria-labelledby="test-title">
+      <div class="section-heading"><div><p class="eyebrow">THE PRACTICE STUDIO</p><h2 id="test-title">Your next session starts here.</h2></div><p class="section-note">Take a breath. Find a comfortable pace.<br>Accuracy first — speed will follow.</p></div>
+      <div class="app-grid">
+        <section class="test-panel panel" aria-label="Typing test controls and typing area">
+          <div class="panel-head"><div><span class="panel-kicker">TYPING TEST</span><h3>Ready when you are.</h3></div><span class="status-pill" id="status-pill"><i></i><span>Ready</span></span></div>
+          <div class="control-row">
+            <div class="control-group"><span class="control-label">DURATION</span><div class="segmented" role="group" aria-label="Test duration"><button type="button" data-duration="15">15s</button><button type="button" data-duration="30" class="selected" aria-pressed="true">30s</button><button type="button" data-duration="60">60s</button></div></div>
+            <label class="control-group level-control"><span class="control-label">DIFFICULTY</span><select id="difficulty" aria-label="Difficulty"><option value="easy">Easy</option><option value="medium" selected>Medium</option><option value="hard">Hard</option></select></label>
+          </div>
+          <div class="timer-strip"><div><span class="control-label">TIME REMAINING</span><strong id="timer" aria-live="off">00:30</strong></div><div class="timer-right"><span class="timer-track"><span id="timer-progress"></span></span><span id="timer-hint">Timer starts when you begin</span></div></div>
+          <div class="passage-block"><div class="block-label"><span class="control-label">PASSAGE</span><button type="button" class="text-button" id="new-passage">↻ New passage</button></div><p id="passage" class="passage" aria-label="Text to type"></p></div>
+          <div class="typing-block"><label for="typing-input" class="control-label">YOUR TYPING</label><textarea id="typing-input" rows="4" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="Click Start test, then type the passage here…" aria-describedby="typing-help" disabled></textarea><div class="input-foot"><span id="typing-help">Your typing stays in this browser.</span><span id="char-count">0 characters</span></div></div>
+          <div class="action-row"><button type="button" id="start-button" class="button-primary">Start test <span aria-hidden="true">→</span></button><button type="button" id="reset-button" class="button-secondary">Reset</button><span class="action-tip">Tip: punctuation and spaces count.</span></div>
+        </section>
+        <aside class="side-column" aria-label="Typing performance">
+          <section class="panel performance-panel"><div class="panel-head compact"><div><span class="panel-kicker">YOUR PERFORMANCE</span><h3>Live results</h3></div><span class="sparkle" aria-hidden="true">✳</span></div>
+            <div class="metrics-grid"><div class="metric metric-purple"><span>NET WPM</span><strong id="wpm">0</strong><small>words per minute</small></div><div class="metric metric-blue"><span>ACCURACY</span><strong id="accuracy">0<span>%</span></strong><small>character match</small></div><div class="metric metric-red"><span>ERRORS</span><strong id="errors">0</strong><small>characters off target</small></div><div class="metric metric-gold"><span>CHARACTERS</span><strong id="characters">0</strong><small>typed so far</small></div></div>
+            <div class="result-note" id="result-note"><span class="note-icon">✦</span><p><strong>Build your baseline.</strong><br>Your first test is a starting point, not a score to chase.</p></div>
+          </section>
+          <section class="panel history-panel"><div class="history-heading"><div><span class="panel-kicker">YOUR JOURNEY</span><h3>Recent sessions</h3></div><button type="button" id="clear-history" class="text-button">Clear</button></div><div id="history-list" class="history-list"><div class="empty-history"><span>↗</span><p>Your completed tests will appear here.</p></div></div><div class="history-footer"><span id="session-count">0 sessions saved</span><span class="local-badge"><i></i> Saved locally</span></div></section>
+        </aside>
+      </div>
+    </section>
+
+    <section id="how-it-works" class="how-section"><div class="section-heading"><div><p class="eyebrow">SIMPLE BY DESIGN</p><h2>Three steps. One better habit.</h2></div><p class="section-note">Small, consistent sessions add up.<br>Keep showing up for yourself.</p></div><div class="steps-grid"><article class="step-card"><span class="step-number">01</span><div class="step-icon icon-blue">⌁</div><h3>Choose your pace</h3><p>Pick a time limit and difficulty that fits your energy today.</p></article><article class="step-card"><span class="step-number">02</span><div class="step-icon icon-purple">⌨</div><h3>Find your flow</h3><p>Type the passage naturally. Your speed and accuracy update as you go.</p></article><article class="step-card"><span class="step-number">03</span><div class="step-icon icon-pink">↗</div><h3>Notice progress</h3><p>Review your results and use each session to build a steady habit.</p></article></div></section>
+    <section class="privacy-banner"><div class="privacy-icon">◈</div><div><h2>Your practice is yours.</h2><p>TypeFlow stores your session history in this browser only. No account, no tracking profile, no server-side typing data.</p></div><span class="privacy-tag">PRIVATE BY DESIGN</span></section>
+  </main>
+  <footer class="site-footer"><div class="wrap footer-inner"><a class="footer-brand" href="/">TypeFlow<span>®</span></a><p>Made for daily progress.</p><div><a href="#test">Take a test</a><a href="#how-it-works">How it works</a></div><small>© <span id="year"></span> TypeFlow. Keep finding your flow.</small></div></footer>
+  <script src="{{ url_for('static', filename='js/app.js') }}" defer></script>
+</body>
+</html>
